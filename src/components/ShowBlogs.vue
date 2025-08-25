@@ -135,19 +135,4 @@ h3, p, article {
   cursor: pointer;
 }
 
-#preview-tags {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  padding: 0 15px 0 10px;
-}
-
-#preview-tags p {
-  border: 1px solid rgba(121, 332, 213);
-  padding: 2px 5px;
-  border-radius: 10px;
-  width: max-content;
-  margin: 18px 5px 0 0;
-}
 </style>
