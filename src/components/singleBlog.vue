@@ -1,25 +1,34 @@
 <template>
   <div class="single-blog">
-    <img v-bind:src="blog.imageUrl" alt="">
-    <h2>{{ blog.title | toUppercase }}</h2>
-    <article>{{ blog.content }}</article>
-    <div id="preview-tags">
-      <p>{{blog.categories.toString().toUpperCase()}}</p>
-    </div>
-    <p>Author: {{ blog.author }}</p>
+    <img v-bind:src="blog.imageUrl" alt="" id="card-img">
+    <post-card>
+      <p class="card-style" slot="title">{{ blog.title }}</p>
+      <p class="card-style" slot="content">{{ blog.content }}</p>
+      <div slot="categoryFor" v-for="category in blog.categories">
+        <p class="card-style" slot="category">{{ category }}</p>
+      </div>
+      <p class="card-style" slot="author">Author: {{ blog.author }}</p>
+    </post-card>
   </div>
 </template>
 
 <script>
 
+import GetCardsList from "../widgets/GetCardsList.vue";
+import PostCardConstructor from "../UI/postCardConstructor.vue";
+
 export default {
-  methods: {},
+  components: {
+    'post-card': PostCardConstructor,
+    'get-card': GetCardsList
+  },
   data() {
     return {
       id: this.$route.params.id,
       blog: {},
     }
   },
+  methods: {},
   filters: {
     toUppercase(val) {
       return val.toUpperCase()
@@ -66,4 +75,5 @@ img {
   width: max-content;
   margin: 18px 5px 0 0;
 }
+
 </style>

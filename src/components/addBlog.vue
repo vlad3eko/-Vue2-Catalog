@@ -30,7 +30,7 @@
             <h3>Thank's for your post!</h3>
           </div>
           <label>Preview</label>
-          <img v-if="blog.imageUrl" :src="blog.imageUrl" alt="Fail. Try again...">
+          <img v-if="blog.imageUrl" :src="blog.imageUrl" alt="Fail. Try again..." id="card-img">
           <post-card>
             <p slot="title">{{ blog.title }}</p>
             <p slot="content">{{ blog.content }}</p>
@@ -51,12 +51,12 @@
 <script>
 import onFileChange from '../mixins/onFileChange'
 import navMenu from "./navMenu.vue";
-import postCard from "../UI/postCard.vue";
+import PostCardConstructor from "../UI/postCardConstructor.vue";
 
 export default {
   components: {
     'nav-menu': navMenu,
-    'post-card': postCard,
+    'post-card': PostCardConstructor,
   },
   data() {
     return {

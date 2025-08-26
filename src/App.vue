@@ -9,7 +9,7 @@
 <script>
 import addBlog from "./components/addBlog.vue";
 import showBlogs from "./components/ShowBlogs.vue";
-import listBlogs from "./listBlogs.vue";
+import listBlogs from "./components/listBlogs.vue";
 import navMenu from "./components/navMenu.vue";
 
 export default {
