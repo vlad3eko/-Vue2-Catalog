@@ -30,25 +30,17 @@
             <h3>Thank's for your post!</h3>
           </div>
           <label>Preview</label>
-          <img v-if="blog.imageUrl" :src="blog.imageUrl" alt="Fail. Try again...">
-          <div id="preview-content">
-            <div id="preview-title">
-              <p>{{ blog.title }}</p>
+          <img v-if="blog.imageUrl" :src="blog.imageUrl" alt="Fail. Try again..." id="card-img">
+          <post-card>
+            <p slot="title">{{ blog.title }}</p>
+            <p slot="content">{{ blog.content }}</p>
+            <div slot="categoryFor" v-for="category in blog.categories">
+              <p slot="category">{{ category }}</p>
             </div>
-            <div id="preview-about">
-              <p>{{ blog.content }}</p>
-            </div>
-            <div id="preview-tags">
-              <div v-for="category in blog.categories">
-                <p>{{ category }}</p>
-              </div>
-            </div>
-            <div id="preview-author">
-              <p>Author: {{ blog.author }}</p>
-            </div>
-          </div>
+            <p slot="author">Author: {{ blog.author }}</p>
+          </post-card>
           <div id="button-submit">
-            <button @click.prevent="post">Create channel</button>
+            <button @click.prevent="post">add post</button>
           </div>
         </div>
       </div>
@@ -59,10 +51,12 @@
 <script>
 import onFileChange from '../mixins/onFileChange'
 import navMenu from "./navMenu.vue";
+import PostCardConstructor from "../UI/postCardConstructor.vue";
 
 export default {
   components: {
-    'nav-menu': navMenu
+    'nav-menu': navMenu,
+    'post-card': PostCardConstructor,
   },
   data() {
     return {
@@ -144,59 +138,6 @@ textarea {
 
 #checkboxes label {
   display: inline-block;
-}
-
-#preview-wrapper {
-  max-width: 388px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-#preview-wrapper img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-#preview-wrapper * {
-  max-width: 388px;
-}
-
-#preview-content {
-  background: #1B1B1B;
-  padding: 0 15px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin-bottom: 50px;
-  text-align: left;
-}
-
-#preview-content * {
-  background: #1B1B1B;
-}
-
-#preview-title {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-#preview-about * {
-  color: #A0A0A0;
-}
-
-#preview-tags {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-}
-
-#preview-tags p {
-  border: 1px solid rgba(121, 332, 213);
-  padding: 2px 5px;
-  border-radius: 10px;
-  margin-left: 5px;
-  width: max-content;
 }
 
 #submitted-success * {

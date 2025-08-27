@@ -1,6 +1,6 @@
 import showBlogs from "./components/ShowBlogs.vue";
 import addBlog from "./components/addBlog.vue";
-import listBlogs from "./listBlogs.vue";
+import listBlogs from "./components/listBlogs.vue";
 import singleBlog from "./components/singleBlog.vue";
 
 export default [
