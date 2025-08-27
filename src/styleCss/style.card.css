@@ -54,7 +54,7 @@
   width: max-content;
 }
 
-#router-showBlogs {
+#card-showContent {
   display: flex;
   flex-direction: column;
 }

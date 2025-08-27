@@ -20,7 +20,7 @@ import PostCardConstructor from "../UI/postCardConstructor.vue";
 export default {
   components: {
     'post-card': PostCardConstructor,
-    'get-card': GetCardsList
+    'get-card': GetCardsList,
   },
   data() {
     return {
@@ -61,12 +61,6 @@ img {
   margin-top: 100px;
 }
 
-#preview-tags {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-}
 
 #preview-tags p {
   border: 1px solid rgba(121, 332, 213);
