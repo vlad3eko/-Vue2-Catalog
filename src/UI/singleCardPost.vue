@@ -14,7 +14,7 @@
 
 <script>
 
-import PostCardConstructor from "../UI/postCardConstructor.vue";
+import PostCardConstructor from "../Constructors/postCardConstructor.vue";
 
 
 export default {

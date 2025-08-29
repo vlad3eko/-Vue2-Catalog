@@ -30,15 +30,7 @@
             <h3>Thank's for your post!</h3>
           </div>
           <label>Preview</label>
-          <img v-if="blog.imageUrl" :src="blog.imageUrl" alt="Fail. Try again..." id="card-img">
-          <post-card>
-            <p slot="title">{{ blog.title }}</p>
-            <p slot="content">{{ blog.content }}</p>
-            <div slot="categoryFor" v-for="category in blog.categories">
-              <p slot="category">{{ category }}</p>
-            </div>
-            <p slot="author">Author: {{ blog.author }}</p>
-          </post-card>
+          <single-card v-bind:blog="blog"/>
           <div id="button-submit">
             <button @click.prevent="post">add post</button>
           </div>
@@ -51,12 +43,12 @@
 <script>
 import onFileChange from '../mixins/onFileChange'
 import navMenu from "./navMenu.vue";
-import PostCardConstructor from "../UI/postCardConstructor.vue";
+import singleCardPost from "../UI/singleCardPost.vue";
 
 export default {
   components: {
     'nav-menu': navMenu,
-    'post-card': PostCardConstructor,
+    'single-card': singleCardPost
   },
   data() {
     return {
