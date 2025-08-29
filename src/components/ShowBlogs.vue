@@ -63,9 +63,4 @@ export default {
   top: 90px;
 }
 
-#blog-controls button {
-  width: 50%;
-  cursor: pointer;
-}
-
 </style>

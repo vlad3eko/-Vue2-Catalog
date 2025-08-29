@@ -31,9 +31,10 @@
           </div>
           <label>Preview</label>
           <single-card v-bind:blog="blog"/>
-          <div id="button-submit">
-            <button @click.prevent="post">add post</button>
-          </div>
+          <post-button v-if="blog.imageUrl">
+            <button slot="button-num" @click.prevent="post">add post</button>
+          </post-button>
+          <p v-else>add image to post</p>
         </div>
       </div>
     </div>
@@ -43,12 +44,14 @@
 <script>
 import onFileChange from '../mixins/onFileChange'
 import navMenu from "./navMenu.vue";
-import singleCardPost from "../UI/singleCardPost.vue";
+import PostCardUsage from "../ConstructorsUsages/postCardUsage.vue";
+import postButtonConstructor from "../Constructors/postButtonConstructor.vue";
 
 export default {
   components: {
+    'post-button': postButtonConstructor,
     'nav-menu': navMenu,
-    'single-card': singleCardPost
+    'single-card': PostCardUsage,
   },
   data() {
     return {

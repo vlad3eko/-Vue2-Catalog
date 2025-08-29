@@ -1,0 +1,18 @@
+#controls-center {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#controls-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 30px;
+  gap: 3px;
+}
+
+#controls-row button {
+  width: 49%;
+  height: 30px;
+  cursor: pointer;
+}

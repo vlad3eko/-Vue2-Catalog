@@ -4,10 +4,10 @@
       <router-link v-bind:to="'blog/' + blog.id">
         <single-card v-bind:blog="blog"/>
       </router-link>
-      <div id="blog-controls">
-        <button>Fix Content</button>
-        <button>Public</button>
-      </div>
+      <post-button>
+        <button slot="button-num">Button One</button>
+        <button slot="button-num">Button Two</button>
+      </post-button>
     </div>
   </div>
 </template>
@@ -17,12 +17,14 @@
 import searchMixins from "../mixins/searchMixins";
 import getCard from "../mixins/getCard";
 import filters from "../mixins/filters";
-import singleCardPost from "../UI/singleCardPost.vue";
+import PostCardUsage from "../ConstructorsUsages/postCardUsage.vue";
+import postButtonConstructor from "../Constructors/postButtonConstructor.vue";
 
 
 export default {
   components: {
-    'single-card': singleCardPost,
+    'single-card': PostCardUsage,
+    'post-button': postButtonConstructor
 
   },
   data() {

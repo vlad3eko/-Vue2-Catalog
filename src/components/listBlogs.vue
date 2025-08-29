@@ -72,19 +72,5 @@ export default {
   max-width: 500px;
 }
 
-.single-blog {
-  border-radius: 10px;
-  margin: 0 0 15px 0;
-  background: rgba(44, 60, 43, 0.88);
-}
 
-#controls-blogs {
-  border-radius: 10px;
-  width: 300px;
-  max-height: 400px;
-  margin-left: 20px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 90px;
-}
 </style>
