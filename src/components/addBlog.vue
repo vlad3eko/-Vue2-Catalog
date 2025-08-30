@@ -91,9 +91,9 @@ export default {
 
 #add-block {
   margin: 20px auto;
-  box-shadow: 0 90px 300px black;
-  backdrop-filter: blur(30px);
-  border: 2px #262626 solid;
+  box-shadow: 0 50px 200px #DBF8FB;
+  backdrop-filter: blur(10px);
+  border: 2px #DBF8FB solid;
   color: #E0E0E0;
   padding-bottom: 50px;
   border-radius: 20px;
